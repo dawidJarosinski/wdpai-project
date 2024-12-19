@@ -67,28 +67,29 @@ body {
 
 .logo-container {
     position: absolute;
-    top: 20px;
+    top: 5px;
     left: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .logo-image {
-    width: 7vw;
+    width: 6vw;
     height: auto;
 }
 
 .logo-text h1 {
     font-size: 80px;
     margin: 0;
+    margin-bottom: -10px;
     color: #333;
     font-weight: bold;
     font-family: 'BarlowCondensed-ExtraBoldItalic';
 }
 
 .logo-text p {
-    font-size: 40px;
+    font-size: 37px;
     margin: 0;
     color: #666;
 }
