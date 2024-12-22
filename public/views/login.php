@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/assets/logo2.png">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="icon" href="public/assets/logo2.png">
     <title>Catch Zone</title>
 </head>
 <body>  
@@ -15,7 +15,7 @@
     <div class="shape5"></div>
 
     <div class="logo-container">
-        <img src="assets/logo2.png" alt="Logo" class="logo-image">
+        <img src="public/assets/logo2.png" alt="Logo" class="logo-image">
         <div class="logo-text">
             <h1>CATCH ZONE</h1>
             <p>FORUM WĘDKARSKIE</p>
@@ -23,11 +23,19 @@
     </div>
 
     <div class="login-container">
-        <form class="login-form">
+        <form class="login-form" action="login" method="POST">
+            <div class="messages"> <?php
+                if(isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }
+            ?>
+            </div>
             <label>Email</label>
-            <input type="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <label>Password</label>
-            <input type="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign In</button>
             <a href="#">Forgot password?</a>
         </form>

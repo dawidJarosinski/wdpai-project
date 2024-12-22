@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'BarlowCondensed-Medium';
-    src: url(assets/BarlowCondensed-Medium.ttf);
+    src: url('../assets/BarlowCondensed-Medium.ttf');
 }
 
 @font-face {
     font-family: 'BarlowCondensed-ExtraBoldItalic';
-    src: url(assets/BarlowCondensed-ExtraBoldItalic.ttf);
+    src: url('../assets/BarlowCondensed-ExtraBoldItalic.ttf');
 }
 
 body {
@@ -75,7 +75,8 @@ body {
 }
 
 .logo-image {
-    width: 6vw;
+    width: 130px;
+    margin-top: 15px;
     height: auto;
 }
 
