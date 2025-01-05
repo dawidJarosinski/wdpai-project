@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/mainPageStyle.css">
     <link rel="icon" href="public/assets/logo2.png">
-    <title>Catch Zone</title>
+    <title>Catch Zone - Category</title>
 </head>
 <body>
 <header>
@@ -33,15 +33,23 @@
     </div>
 </header>
 <nav class="breadcrumbs">
-    <a href="forum">Strona główna</a>
+    <a href="forum">Strona główna</a> > <?php echo $category->getName(); ?>
 </nav>
 <main>
+    <div class="add-post-btn">
+        <?php if (isset($_SESSION['user'])): ?>
+            <a href="addPostForm?category_id=<?php echo $category->getId(); ?>" class="add-post-btn">Dodaj wpis</a>
+        <?php else: ?>
+            <p>Musisz być zalogowany, aby dodać wpis.</p>
+        <?php endif; ?>
+    </div>
     <section class="categories">
-        <?php foreach ($categories as $category): ?>
-            <a href="category?id=<?php echo $category->getId(); ?>">
+        <?php foreach ($posts as $post): ?>
+            <a href="post?id=<?php echo $post->getId(); ?>">
                 <div class="category">
-                    <h2><?php echo $category->getName(); ?></h2>
-                    <p><?php echo $category->getDescription(); ?></p>
+                    <h2><?php echo $post->getTitle(); ?></h2>
+                    <p><?php echo $post->getContent(); ?></p>
+                    <p><small>By <?php echo $post->getAuthor(); ?> on <?php echo $post->getCreatedAt(); ?></small></p>
                 </div>
             </a>
         <?php endforeach; ?>

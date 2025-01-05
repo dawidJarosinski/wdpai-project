@@ -37,7 +37,7 @@
             <label>Password</label>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign In</button>
-            <a href="#">Forgot password?</a>
+            <a href="register">Nie masz konta? Zarejestruj się</a>
         </form>
     </div>
 </body>

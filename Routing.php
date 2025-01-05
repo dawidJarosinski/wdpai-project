@@ -2,6 +2,9 @@
 
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/AuthController.php';
+require_once 'src/controllers/ForumController.php';
+require_once 'src/controllers/PostController.php';
+require_once 'src/controllers/CommentController.php';
 
 class Routing {
     public static $routes;
@@ -23,7 +26,7 @@ class Routing {
 
         $controller = self::$routes[$action];
         $object = new $controller;
-        $action = $action ?: "login";
+        $action = $action ?: "forum";
 
         $object->$action();
     }

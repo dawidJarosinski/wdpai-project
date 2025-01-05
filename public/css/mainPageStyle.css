@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'BarlowCondensed-Medium';
+    src: url('../assets/BarlowCondensed-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'BarlowCondensed-ExtraBoldItalic';
+    src: url('../assets/BarlowCondensed-ExtraBoldItalic.ttf');
+}
+
+body {
+    background-color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'BarlowCondensed-Medium';
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #00A4DF;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background-color: #0084B4;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #003f7f;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #0084B4;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #003f7f;
+}
+
+.breadcrumbs {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #0084B4;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #e6e6e6;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.category:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category h2 {
+    margin: 0;
+    color: #0084B4;
+}
+
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.post, .comments .comment {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.post h2, .comments h3 {
+    margin-top: 0;
+}
+
+.comments .comment {
+    border-left: 5px solid #ccc;
+}
+
+.comments .comment p {
+    margin: 5px 0;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+
+.comment-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.comment-form textarea {
+    width: 95vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #45a049;
+}
+
+.add-post-btn {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-post-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-post-btn a:hover {
+    background-color: #45a049;
+}
+
+.add-post-btn p {
+    color: red;
+    font-weight: bold;
+}

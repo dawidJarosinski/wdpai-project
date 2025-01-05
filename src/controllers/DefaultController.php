@@ -11,4 +11,12 @@ class DefaultController extends AppController {
     public function forum() {
         $this->render('forum');
     }
+
+    public function register() {
+        $this->render('register');
+    }
+
+    public function addPostForm() {
+        $this->render('addPostForm');
+    }
 }
