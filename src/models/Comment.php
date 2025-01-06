@@ -5,14 +5,14 @@ class Comment
     private $id;
     private $postId;
     private $content;
-    private $author;
+    private $authorId;
     private $createdAt;
 
-    public function __construct($id, $postId, $content, $author, $createdAt) {
+    public function __construct($id, $postId, $content, $authorId, $createdAt) {
         $this->id = $id;
         $this->postId = $postId;
         $this->content = $content;
-        $this->author = $author;
+        $this->authorId = $authorId;
         $this->createdAt = $createdAt;
     }
 
@@ -28,8 +28,8 @@ class Comment
         return $this->content;
     }
 
-    public function getAuthor() {
-        return $this->author;
+    public function getAuthorId() {
+        return $this->authorId;
     }
 
     public function getCreatedAt() {

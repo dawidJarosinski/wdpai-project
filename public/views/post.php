@@ -33,20 +33,23 @@
     </div>
 </header>
 <nav class="breadcrumbs">
-    <a href="forum">Strona główna</a> > <a href="category?id=<?php echo $post->getCategoryId(); ?>"><?php echo $post->getCategoryId(); ?></a> > <?php echo $post->getTitle(); ?>
+    <a href="forum">Strona główna</a> > <a href="category?id=<?php echo $post->getCategoryId(); ?>"><?php echo $categoryName; ?></a> > <?php echo $post->getTitle(); ?>
 </nav>
 <main>
     <section class="post">
         <h2><?php echo $post->getTitle(); ?></h2>
         <p><?php echo $post->getContent(); ?></p>
-        <p><small>By <?php echo $post->getAuthor(); ?> on <?php echo $post->getCreatedAt(); ?></small></p>
+        <p><small>Napisany przez:  <?php echo $post->getAuthorName().' '.$post->getAuthorSurname(); ?>, dnia: <?php echo $post->getCreatedAt(); ?></small></p>
+        <?php if ($post->getImagePath()): ?>
+            <img src="public/uploads/<?php echo $post->getImagePath(); ?>" alt="Post Image">
+        <?php endif; ?>
     </section>
     <section class="comments">
         <h3>Comments</h3>
         <?php foreach ($comments as $comment): ?>
             <div class="comment">
                 <p><?php echo $comment->getContent(); ?></p>
-                <p><small>By <?php echo $comment->getAuthor(); ?> on <?php echo $comment->getCreatedAt(); ?></small></p>
+                <p><small>Napisany przez: <?php echo $comment->getAuthorName().' '.$comment->getAuthorSurname(); ?>, dnia: <?php echo $comment->getCreatedAt(); ?></small></p>
             </div>
         <?php endforeach; ?>
     </section>

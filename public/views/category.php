@@ -49,7 +49,7 @@
                 <div class="category">
                     <h2><?php echo $post->getTitle(); ?></h2>
                     <p><?php echo $post->getContent(); ?></p>
-                    <p><small>By <?php echo $post->getAuthor(); ?> on <?php echo $post->getCreatedAt(); ?></small></p>
+                    <p><small>Napisany przez: <?php echo $post->getAuthorName().' '.$post->getAuthorSurname(); ?>, dnia: <?php echo $post->getCreatedAt(); ?></small></p>
                 </div>
             </a>
         <?php endforeach; ?>

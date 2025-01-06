@@ -18,14 +18,10 @@ class AuthController extends AppController {
         $user = $userRepository->findUserByEmail($email);
 
         if(!$user) {
-            return $this->render("login", ["User not exisit!"]);
+            return $this->render("login", ["messages" => ["user not exisit"]]);
         }
 
-        if($user->getEmail() !== $email) {
-            return $this->render("login", ["messages" => ["user with this email not exists"]]);
-        }
-
-        if($user->getPassword() !== $password) {
+        if(!password_verify($password, $user->getPassword())) {
             return $this->render("login", ["messages" => ["wrong password"]]);
         }
 
@@ -51,13 +47,15 @@ class AuthController extends AppController {
         $name = $_POST["name"];
         $surname = $_POST["surname"];
 
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
         $user = $userRepository->findUserByEmail($email);
 
         if($user) {
             return $this->render("register", ["messages" => ["User with this email already exists!"]]);
         }
 
-        $userRepository->saveUser($email, $password, $name, $surname);
+        $userRepository->saveUser($email, $hashedPassword, $name, $surname);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");

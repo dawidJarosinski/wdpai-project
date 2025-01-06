@@ -23,7 +23,7 @@
 </div>
 
 <div class="register-container">
-    <form class="register-form" action="addPost" method="POST">
+    <form class="register-form" action="addPost" method="POST" enctype="multipart/form-data">
         <div class="messages">
             <?php
             if(isset($messages)) {
@@ -39,6 +39,9 @@
 
         <label for="content">Treść</label>
         <textarea id="content" name="content" rows="10" placeholder="Treść" required></textarea>
+
+        <label for="file">Zdjęcie</label>
+        <input type="file" name="file">
 
         <input type="hidden" name="category_id" value="<?php echo $_GET['category_id']; ?>">
 

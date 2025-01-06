@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="icon" href="public/assets/logo2.png">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>Catch Zone - Register</title>
 </head>
 <body>
@@ -36,6 +37,8 @@
         <input type="email" name="email" placeholder="Email" required>
         <label>Password</label>
         <input type="password" name="password" placeholder="Password" required>
+        <label>Confirm password</label>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" required>
         <label>Surname</label>

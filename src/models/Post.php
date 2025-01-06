@@ -5,16 +5,19 @@ class Post {
     private $categoryId;
     private $title;
     private $content;
-    private $author;
+    private $authorId;
     private $createdAt;
 
-    public function __construct($id, $categoryId, $title, $content, $author, $createdAt) {
+    private $imagePath;
+
+    public function __construct($id, $categoryId, $title, $content, $author, $createdAt, $imagePath) {
         $this->id = $id;
         $this->categoryId = $categoryId;
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
         $this->createdAt = $createdAt;
+        $this->imagePath = $imagePath;
     }
 
     public function getId() {
@@ -33,11 +36,20 @@ class Post {
         return $this->content;
     }
 
-    public function getAuthor() {
+    public function getAuthorId() {
         return $this->author;
     }
 
     public function getCreatedAt() {
         return $this->createdAt;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getImagePath()
+    {
+        return $this->imagePath;
+    }
+
 }

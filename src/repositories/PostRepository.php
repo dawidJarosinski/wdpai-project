@@ -11,7 +11,7 @@ class PostRepository extends Repository
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $result = [];
         foreach ($posts as $post) {
-            $result[] = new Post($post['id'], $post['category_id'], $post['title'], $post['content'], $post['author_id'], $post['created_at']);
+            $result[] = new Post($post['id'], $post['category_id'], $post['title'], $post['content'], $post['author_id'], $post['created_at'], $post['image_path']);
         }
         return $result;
     }
@@ -31,25 +31,28 @@ class PostRepository extends Repository
                 $post['title'],
                 $post['content'],
                 $post['author_id'],
-                $post['created_at']
+                $post['created_at'],
+                $post['image_path']
             );
         }
 
         return null;
     }
 
-    public function addPost(string $title, string $content, int $categoryId, int $authorId) {
+    public function addPost(string $title, string $content, int $categoryId, int $authorId, string $imagePath) {
         $currentDate = date('Y-m-d H:i:s');
 
         $stmt = $this->database->connect()->prepare("
-            INSERT INTO posts (title, content, category_id, author_id, created_at)
-            VALUES (:title, :content, :category_id, :author_id, :created_at)");
+            INSERT INTO posts (title, content, category_id, author_id, created_at, image_path)
+            VALUES (:title, :content, :category_id, :author_id, :created_at, :image_path)
+            ");
 
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
         $stmt->bindParam(':content', $content, PDO::PARAM_STR);
         $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
         $stmt->bindParam(':author_id', $authorId, PDO::PARAM_INT);
         $stmt->bindParam(':created_at', $currentDate, PDO::PARAM_STR);
+        $stmt->bindParam(':image_path', $imagePath, PDO::PARAM_STR);
         $stmt->execute();
     }
 }

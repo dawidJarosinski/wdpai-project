@@ -22,4 +22,12 @@ class CategoryRepository extends Repository
         $category = $stmt->fetch(PDO::FETCH_ASSOC);
         return new Category($category['id'], $category['name'], $category['description']);
     }
+
+    public function findCategoryNameById($categoryId) {
+        $stmt = $this->database->connect()->prepare("SELECT name FROM categories WHERE id = :id");
+        $stmt->bindParam(':id', $categoryId, PDO::PARAM_INT);
+        $stmt->execute();
+        $category = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $category['name'];
+    }
 }

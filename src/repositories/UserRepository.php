@@ -25,6 +25,27 @@ class UserRepository extends Repository
             $user['id']
         );
     }
+    public function findUserById(int $id) {
+        $stmt = $this->database->connect()->prepare(
+            "SELECT * FROM public.users WHERE id = :id"
+        );
+        $stmt->bindParam(":id", $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['email'],
+            $user['password'],
+            $user['name'],
+            $user['surname'],
+            $user['id']
+        );
+    }
 
     public function saveUser($email, $password, $name, $surname){
         $stmt = $this->database->connect()->prepare(
