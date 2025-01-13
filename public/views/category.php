@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/mainPageStyle.css">
     <link rel="icon" href="public/assets/logo2.png">
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>Catch Zone - Category</title>
 </head>
 <body>
@@ -60,4 +61,14 @@
     <p>Kontakt: kontakt@catchzone.pl | Regulamin | Polityka Prywatności</p>
 </footer>
 </body>
+
+<template id="post-template">
+    <a href="">
+        <div class="category">
+            <h2>title</h2>
+            <p>description</p>
+            <p><small>Napisany przez: author, dnia: createdAt</small></p>
+        </div>
+    </a>
+</template>
 </html>

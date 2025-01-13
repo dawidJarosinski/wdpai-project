@@ -55,4 +55,18 @@ class PostRepository extends Repository
         $stmt->bindParam(':image_path', $imagePath, PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function getPostByTitleOrContent(string $search) {
+        $search = '%'.strtolower($search).'%';
+
+        $stmt = $this->database->connect()->prepare(
+            "SELECT posts.*, users.name name, users.surname surname FROM posts
+                    JOIN users ON posts.author_id = users.id
+                    WHERE LOWER(title) LIKE :search OR LOWER(content) LIKE :search"
+        );
+        $stmt->bindParam(':search', $search, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

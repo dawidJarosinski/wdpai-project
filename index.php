@@ -19,5 +19,6 @@ Routing::post('login', 'AuthController');
 Routing::post('register', 'AuthController');
 Routing::post('addComment', 'CommentController');
 Routing::post('addPost', 'PostController');
+Routing::post('search', 'PostController');
 
 Routing::run($path);

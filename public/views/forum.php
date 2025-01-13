@@ -17,10 +17,6 @@
         </div>
     </div>
     <div class="header-right">
-        <div class="search-bar">
-            <input type="text" placeholder="Szukaj wpisów...">
-            <button>Szukaj</button>
-        </div>
         <div class="auth-buttons">
             <?php if(isset($_SESSION['user'])): ?>
                 <span>Witaj, <?php echo $_SESSION['user']['name'] . ' ' . $_SESSION['user']['surname']; ?></span>
