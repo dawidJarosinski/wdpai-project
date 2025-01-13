@@ -20,7 +20,6 @@
     <div class="header-right">
         <div class="search-bar">
             <input type="text" placeholder="Szukaj wpisów...">
-            <button>Szukaj</button>
         </div>
         <div class="auth-buttons">
             <?php if(isset($_SESSION['user'])): ?>

@@ -49,6 +49,8 @@ INSERT INTO categories (id, description, name) VALUES
 (4, 'Rozmawiaj o wędkach, kołowrotkach i innych akcesoriach.', 'Sprzęt Wędkarski'),
 (5, 'Dziel się najlepszymi miejscami na łowienie ryb.', 'Miejsca do Wędkowania');
 
-INSERT into users(id, email, password, name, surname) VALUES (1, "test@test.pl", "$2a$12$shk30AgUF5S5pLG49MKmw.y6tP4jpMNQSn5zfeY.KcBZ535ax1qZ6", "marek", "wrld");
+INSERT INTO users(id, email, password, name, surname)
+VALUES (1, 'test@test.pl', '$2a$12$shk30AgUF5S5pLG49MKmw.y6tP4jpMNQSn5zfeY.KcBZ535ax1qZ6', 'marek', 'wrld');
 
-INSERT into posts(category_id, title, content, author_id, created_at, image_path) values (1, "Mój rekordowy okoń", "Wczoraj złowiłem rekordowego okonia. Był tak wielki, że ledwo zmieścił się na zdjęciu.", 1, "2021-01-01 12:00:00", "images.jpg");
+INSERT INTO posts(category_id, title, content, author_id, created_at, image_path)
+VALUES (1, 'Mój rekordowy okoń', 'Wczoraj złowiłem rekordowego okonia. Był tak wielki, że ledwo zmieścił się na zdjęciu.', 1, '2021-01-01 12:00:00', 'images.jpg');
